@@ -1,0 +1,24 @@
+<h2>APPLICATIONS</h2>
+	<p>These are the technologies Wappalyzer detects.<p>
+<div>
+	<table style: height='10px' width='500px'>
+		<thead>
+		<div>
+			<strong><%= link_to  "#{@category.categoryName}", 'https://wappalyzer.com/categories/advertising-networks'%></strong>
+		</div>
+		</thead>
+		<tbody>
+			<% @contents.each do |content|%>
+			<tr>
+				<td><%= link_to "#{content.applicationName}", "http://#{content.applicationName.downcase}.com", :target => '_blank'%></td>
+				<!--<td><%= link_to 'Destroy', category_content_path(@category, content), method: :delete, data: { confirm: 'Are you sure?' }%></td> -->
+			</tr>		
+			<%end%>
+		</tbody>
+		
+	</table>
+</div>
+<%= render 'form'%>
+<%= link_to 'Home', categories_path%>
+
+

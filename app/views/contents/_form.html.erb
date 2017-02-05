@@ -1,0 +1,11 @@
+<h2>Form to add applications</h2>
+
+<%= form_for :content, url: {:action => "create"} do |f| %>
+	<div>
+		<%= f.label :Application_Name%>
+		<%= f.text_field :applicationName%>
+	</div>
+	<div>
+		<%= submit_tag ("Save Application")%>
+	</div>
+<%end%>

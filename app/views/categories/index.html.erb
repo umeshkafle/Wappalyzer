@@ -1,0 +1,16 @@
+<h2>Categories List</h2>
+<table>
+	<% @categories.each do |category|%>
+	<tbody>
+		<div>
+			<%= category.categoryName%>
+		</div>
+		<div>
+			<%= link_to 'Add Application', new_category_content_path(category)%>
+			<%= link_to 'View Applications', category_contents_path(category)%>
+		</div>
+	</tbody>
+</table>
+<%end%>
+<div>
+	<%= link_to 'new Category', new_category_path%></div>
