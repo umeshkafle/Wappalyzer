@@ -3,7 +3,7 @@
 	<% @categories.each do |category|%>
 	<tbody>
 		<div>
-			<%= category.categoryName%>
+			<%= link_to "#{category.categoryName}", "http://#{category.categoryName.downcase}.com", :target => '_blank'%>
 		</div>
 		<div>
 			<%= link_to 'Add Application', new_category_content_path(category)%>

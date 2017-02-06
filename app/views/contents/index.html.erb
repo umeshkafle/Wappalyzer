@@ -1,24 +1,57 @@
-<h2>APPLICATIONS</h2>
-	<p>These are the technologies Wappalyzer detects.<p>
 <div>
-	<table style: height='10px' width='500px'>
-		<thead>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Select Category
+    <span class="caret"></span>
+  </button>
+  <% @categories.each do |category|%>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><%= link_to "Advertising Networks", category_contents_path(category_id=1)%></li>
+    <li><%= link_to "Analytics", category_contents_path(category_id=2)%></li>
+    <li><%= link_to "Blogs", category_contents_path(category_id=3)%></li>
+    <li><%= link_to "BuildingCISystem", category_contents_path(category_id=4)%></li>
+    <li><%= link_to "CacheTools", category_contents_path(category_id=5)%></li>
+    <li><%= link_to "Captchas", category_contents_path(category_id=6)%></li>
+    <li><%= link_to "CDN", category_contents_path(category_id=7)%></li>
+    <li><%= link_to "CMS", category_contents_path(category_id=8)%></li>
+    <li><%= link_to "CommentSystem", category_contents_path(category_id=9)%></li>
+    <li><%= link_to "ControlSystem", category_contents_path(category_id=10)%></li>
+    <li><%= link_to "DatabaseManager", category_contents_path(category_id=11)%></li>
+    <li><%= link_to "Database", category_contents_path(category_id=12)%></li>
+    <li><%= link_to "DevTools", category_contents_path(category_id=13)%></li>
+  </ul>
+  <%end%>
+</div>
+
+
+<div class="container">
+<h2>APPLICATIONS</h2>
+	<p>These are the technologies Wappalyzer detects.</p>
+<div class="table">
+  <table class="table">
+  	<thead>
 		<div>
-			<strong><%= link_to  "#{@category.categoryName}", 'https://wappalyzer.com/categories/advertising-networks'%></strong>
+			<strong><%= link_to  "#{@category.categoryName}", "https://wappalyzer.com/categories/#{@category.categoryName}", :target => '_blank'%></strong>
 		</div>
 		</thead>
 		<tbody>
-			<% @contents.each do |content|%>
-			<tr>
-				<td><%= link_to "#{content.applicationName}", "http://#{content.applicationName.downcase}.com", :target => '_blank'%></td>
-				<!--<td><%= link_to 'Destroy', category_content_path(@category, content), method: :delete, data: { confirm: 'Are you sure?' }%></td> -->
-			</tr>		
-			<%end%>
-		</tbody>
+			<div class="row">
 		
-	</table>
+			<% @contents.each do |content| %>
+				    <div class="col-md-3 col-sm-4 col-xs-12">
+				      
+				        <div class="content.applicatioName">
+				          <%=link_to "#{content.applicationName}", "http://#{content.applicationName.downcase}.com", :target => '_blank'%>
+				        </div>
+				    </div>
+				 
+			<% end %>
+			 </div>
+		</tbody>
+
+  </table>
 </div>
-<%= render 'form'%>
-<%= link_to 'Home', categories_path%>
+
+</div>
 
 
