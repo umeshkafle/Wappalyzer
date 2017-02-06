@@ -1,16 +1,18 @@
 <h2>Categories List</h2>
-<table>
+<table class="table table-hover">
+  <thead>
+		<th>Categories</th>
+		<th>Options</th>
+	</thead>
 	<% @categories.each do |category|%>
 	<tbody>
 		<div>
-			<%= link_to "#{category.categoryName}", "http://#{category.categoryName.downcase}.com", :target => '_blank'%>
-		</div>
-		<div>
-			<%= link_to 'Add Application', new_category_content_path(category)%>
-			<%= link_to 'View Applications', category_contents_path(category)%>
-		</div>
+		<tr>
+			<td><%= link_to "#{category.categoryName}", "http://#{category.categoryName.downcase}.com", :target => '_blank'%></td>
+			<td><span class="glyphicon glyphicon-search" aria-hidden="true"></span>, new_category_content_path(category) </td>
+			<td><%= link_to 'View Applications', category_contents_path(category)%></td>
+		</tr>
 	</tbody>
+	<%end%>
 </table>
-<%end%>
-<div>
-	<%= link_to 'new Category', new_category_path%></div>
+	<%= link_to 'new Category', new_category_path%>

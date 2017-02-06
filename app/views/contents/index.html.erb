@@ -1,4 +1,4 @@
-<div>
+
 <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     Select Category
@@ -27,7 +27,7 @@
 <div class="container">
 <h2>APPLICATIONS</h2>
 	<p>These are the technologies Wappalyzer detects.</p>
-<div class="table">
+<div class="table" border:1px>
   <table class="table">
   	<thead>
 		<div>
@@ -42,6 +42,7 @@
 				      
 				        <div class="content.applicatioName">
 				          <%=link_to "#{content.applicationName}", "http://#{content.applicationName.downcase}.com", :target => '_blank'%>
+				          <!--<%= link_to "Delete", category_content_path(@category, content), method: :delete, data:{confirm: "Are you sure?"}%>-->
 				        </div>
 				    </div>
 				 
