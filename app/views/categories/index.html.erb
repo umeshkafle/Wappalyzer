@@ -8,7 +8,7 @@
 	<tbody>
 		<div>
 		<tr>
-			<td><%= link_to "#{category.categoryName}", "http://#{category.categoryName.downcase}.com", :target => '_blank'%></td>
+			<td><%= link_to  "#{category.categoryName}", "https://wappalyzer.com/categories/#{category.categoryName}", :target => '_blank'%></td>
 			<td><%= link_to 'Add Application', new_category_content_path(category)%></td>
 			<td><%= link_to 'View Applications', category_contents_path(category)%></td>
 		</tr>
